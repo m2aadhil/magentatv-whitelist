@@ -1,0 +1,14 @@
+(\.|^)magentatv\.de$
+(\.|^)magenta\.tv$
+(\.|^)magentamusik\.de$
+(\.|^)magentacloud\.de$
+(\.|^)magenta\.de$
+(\.|^)telekom\.de$
+(\.|^)telekom\.com$
+(\.|^)telekom-dienste\.de$
+(\.|^)t-online\.de$
+(\.|^)tiqcdn\.com$
+(\.|^)idm\.telekom\.com$
+(\.|^)spacegate\.telekom\.de$
+(\.|^)lam-idm\.gc\.telekom\.net$
+(\.|^)p5x\.telekom\.net$
