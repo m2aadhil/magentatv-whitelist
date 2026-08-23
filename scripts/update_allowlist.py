@@ -354,7 +354,10 @@ def main():
     verified = sorted(d for d, r in domains.items() if r["status"] == "verified")
     unverified = sorted(d for d, r in domains.items() if r["status"] == "unverified")
 
-    domains_txt = "\n".join(verified + [""] + ["# unverified (review before adding)"] + unverified) + "\n"
+    verified_lines = list(verified)
+    if unverified:
+        verified_lines += [""] + ["# unverified (review before adding)"] + list(unverified)
+    domains_txt = "\n".join(verified_lines) + "\n"
     ips_txt = "\n".join(netblocks) + "\n"
     adguard_txt = "\n".join(f"@@||{d}^" for d in verified) + "\n"
     regex_txt = "\n".join(

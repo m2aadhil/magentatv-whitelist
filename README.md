@@ -98,6 +98,22 @@ d2jma3uliasueq.cloudfront.net
 - **`tiqcdn.com`** is the Telekom/T-Systems content CDN most often sinkholed by ad-blockers — keep it whitelisted.
 - If Magenta TV still won't play after whitelisting, your VPN exit is almost certainly **outside Germany**. Switch to a German exit, or use the split-tunnel above.
 
+## Auto-maintenance (daily job)
+
+This repo self-updates. A scheduled job runs [`scripts/update_allowlist.py`](scripts/update_allowlist.py) daily and:
+
+1. Re-resolves every domain via public **DoH** (bypassing the local blocker) and maps each IP to its **ASN/org** (RIPE/ARIN RDAP).
+2. Discovers new candidates via **TLS cert SAN clustering** (finds sibling `*.sngtv.t-online.de`-style subdomains) and community-source scraping.
+3. Classifies each domain:
+   - `verified` — Telekom/partner-owned (by suffix or ASN).
+   - `unverified` — resolves to a non-Telekom ASN; kept out of the live list, listed for manual review.
+   - `rejected` — NXDOMAIN.
+4. Regenerates `domains.txt`, `ips.txt`, `domains-adguard.txt`, `domains-regex.txt` and commits+pushes **only when something changed** (idempotent).
+
+State lives in [`magentatv-allowlist.json`](magentatv-allowlist.json) (hostname, status, first/last-seen, ASN, IPs, source). The job is **additive** — it never auto-deletes; stale domains (>90 days unseen) are only flagged. It also alerts if a verified domain starts being sinkholed locally again.
+
+> Live query-log / packet-capture verification (AdGuard Home API, tcpdump) isn't wired up yet — it needs router/AdGuard access. The script is structured so those methods can be plugged in later.
+
 ## License
 
 [MIT](LICENSE)

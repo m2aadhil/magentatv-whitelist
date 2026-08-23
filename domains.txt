@@ -46,5 +46,3 @@ wcps.cdn2.tv.telekom.net
 wcps.t-online.de
 web.magentatv.de
 www.magentamusik.de.edgesuite.net
-
-# unverified (review before adding)

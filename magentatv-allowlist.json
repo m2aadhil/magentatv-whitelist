@@ -315,7 +315,7 @@
         "80.158.6.204"
       ],
       "last_seen": "2026-08-23",
-      "resolved_asn": "T-SYSTEMS-DTAG-OTC01 | DTAG-NIC",
+      "resolved_asn": "T-SYSTEMS-DTAG-OTC03 | DTAG-NIC",
       "session_phase": "unknown",
       "source": "seed-base",
       "status": "verified"
@@ -404,11 +404,11 @@
       "first_seen": "2026-08-23",
       "hostname": "prod.streammanager.telekom-dienste.de",
       "ips": [
-        "18.159.80.196",
-        "3.69.107.171"
+        "63.181.209.210",
+        "63.187.98.40"
       ],
       "last_seen": "2026-08-23",
-      "resolved_asn": "AMAZON-FRA | A100 ROW GmbH",
+      "resolved_asn": "AMAZO-4 | Amazon.com, Inc.",
       "session_phase": "unknown",
       "source": "seed-community",
       "status": "verified"
@@ -518,7 +518,7 @@
         "63.184.16.68"
       ],
       "last_seen": "2026-08-23",
-      "resolved_asn": "AMAZON-FRA | A100 ROW GmbH",
+      "resolved_asn": "AMAZO-4 | Amazon.com, Inc.",
       "session_phase": "unknown",
       "source": "seed-base",
       "status": "verified"
@@ -537,7 +537,7 @@
       "first_seen": "2026-08-23",
       "hostname": "tvhubs.cdn2.tv.telekom.net",
       "ips": [
-        "80.157.193.12"
+        "80.157.193.14"
       ],
       "last_seen": "2026-08-23",
       "resolved_asn": "DTAG-OASIS | DTAG-NIC",
@@ -549,7 +549,7 @@
       "first_seen": "2026-08-23",
       "hostname": "tvhubs.t-online.de",
       "ips": [
-        "80.157.193.16"
+        "80.157.193.13"
       ],
       "last_seen": "2026-08-23",
       "resolved_asn": "DTAG-OASIS | DTAG-NIC",
@@ -616,6 +616,6 @@
     "80.158.0.0/17",
     "91.242.173.0/24"
   ],
-  "last_updated": "2026-08-23T12:13:57.864982+00:00",
+  "last_updated": "2026-08-23T12:15:22.623592+00:00",
   "version": 1
 }
