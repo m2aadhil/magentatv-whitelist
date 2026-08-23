@@ -1,0 +1,625 @@
+{
+  "domains": {
+    "a1114.dscr.akamai.net": {
+      "first_seen": "2026-08-23",
+      "hostname": "a1114.dscr.akamai.net",
+      "ips": [
+        "2.16.206.16",
+        "2.16.206.8"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "AKAMAI-PA | AKAM1-RIPE-MNT",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "accounts.login.idm.telekom.com": {
+      "first_seen": "2026-08-23",
+      "hostname": "accounts.login.idm.telekom.com",
+      "ips": [
+        "34.36.24.120"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "GOOGL-2 | Google LLC",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "api.eu.one.accedo.tv": {
+      "first_seen": "2026-08-23",
+      "hostname": "api.eu.one.accedo.tv",
+      "ips": [
+        "18.239.85.7"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "AMAZON-CF | Amazon.com, Inc.",
+      "session_phase": "unknown",
+      "source": "seed-community",
+      "status": "verified"
+    },
+    "api.magentatv.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "api.magentatv.de",
+      "ips": [],
+      "last_seen": null,
+      "resolved_asn": "",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "rejected"
+    },
+    "api.telekom.com": {
+      "first_seen": "2026-08-23",
+      "hostname": "api.telekom.com",
+      "ips": [
+        "34.54.33.7"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "GOOGL-2 | Google LLC",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "api.telekom.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "api.telekom.de",
+      "ips": [
+        "3.64.89.18",
+        "63.178.98.216",
+        "63.183.251.58"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "AMAZON-FRA | A100 ROW GmbH",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "cdn.tv.telekom.net": {
+      "first_seen": "2026-08-23",
+      "hostname": "cdn.tv.telekom.net",
+      "ips": [],
+      "last_seen": null,
+      "resolved_asn": "",
+      "session_phase": "unknown",
+      "source": "seed-community",
+      "status": "verified"
+    },
+    "cdn2.tv.telekom.net": {
+      "first_seen": "2026-08-23",
+      "hostname": "cdn2.tv.telekom.net",
+      "ips": [],
+      "last_seen": null,
+      "resolved_asn": "",
+      "session_phase": "unknown",
+      "source": "seed-cname",
+      "status": "verified"
+    },
+    "cloud.telekom-dienste.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "cloud.telekom-dienste.de",
+      "ips": [
+        "185.123.90.1",
+        "185.123.90.2"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "DE-I22-FRA-V4-NET02 | de-i22-1-mnt",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "cloud.telekom-dienste.de.cname.i22.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "cloud.telekom-dienste.de.cname.i22.de",
+      "ips": [
+        "185.123.90.1",
+        "185.123.90.2"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "DE-I22-FRA-V4-NET02 | de-i22-1-mnt",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "d1m2yu8slaezx0.cloudfront.net": {
+      "first_seen": "2026-08-23",
+      "hostname": "d1m2yu8slaezx0.cloudfront.net",
+      "ips": [
+        "3.173.161.100",
+        "3.173.161.3",
+        "3.173.161.41",
+        "3.173.161.61"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "AT-88-Z | Amazon Technologies Inc.",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "d2jma3uliasueq.cloudfront.net": {
+      "first_seen": "2026-08-23",
+      "hostname": "d2jma3uliasueq.cloudfront.net",
+      "ips": [
+        "18.239.36.106",
+        "18.239.36.54",
+        "18.239.36.8",
+        "18.239.36.93"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "AMAZON-CF | Amazon.com, Inc.",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "d31vkn4t0cmuc3.cloudfront.net": {
+      "first_seen": "2026-08-23",
+      "hostname": "d31vkn4t0cmuc3.cloudfront.net",
+      "ips": [
+        "18.239.36.107",
+        "18.239.36.20",
+        "18.239.36.21",
+        "18.239.36.26"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "AMAZON-CF | Amazon.com, Inc.",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "e1195.dscg.akamaiedge.net": {
+      "first_seen": "2026-08-23",
+      "hostname": "e1195.dscg.akamaiedge.net",
+      "ips": [
+        "2.16.204.202",
+        "2.16.204.208"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "AKAMAI-PA | AKAM1-RIPE-MNT",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "ebs10.telekom.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "ebs10.telekom.de",
+      "ips": [
+        "80.158.66.173"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "T-SYSTEMS-DTAG-T-SYSTEMS | DTAG-NIC",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "entertain-tv.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "entertain-tv.de",
+      "ips": [
+        "80.158.66.24"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "T-SYSTEMS-DTAG-T-SYSTEMS | DTAG-NIC",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "idm.telekom.com": {
+      "first_seen": "2026-08-23",
+      "hostname": "idm.telekom.com",
+      "ips": [],
+      "last_seen": null,
+      "resolved_asn": "",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "ingress-group01.i22hosting.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "ingress-group01.i22hosting.de",
+      "ips": [
+        "185.123.90.1",
+        "185.123.90.2"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "DE-I22-FRA-V4-NET02 | de-i22-1-mnt",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "internet.t-d1.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "internet.t-d1.de",
+      "ips": [],
+      "last_seen": null,
+      "resolved_asn": "",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "unverified"
+    },
+    "login-production.lam-idm.gc.telekom.net": {
+      "first_seen": "2026-08-23",
+      "hostname": "login-production.lam-idm.gc.telekom.net",
+      "ips": [
+        "34.36.24.120"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "GOOGL-2 | Google LLC",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "login.idm.telekom.com": {
+      "first_seen": "2026-08-23",
+      "hostname": "login.idm.telekom.com",
+      "ips": [],
+      "last_seen": null,
+      "resolved_asn": "",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "login.production-f6s.p5x.telekom.net": {
+      "first_seen": "2026-08-23",
+      "hostname": "login.production-f6s.p5x.telekom.net",
+      "ips": [
+        "34.36.24.120"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "GOOGL-2 | Google LLC",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "login.production-v.p5x.telekom.net": {
+      "first_seen": "2026-08-23",
+      "hostname": "login.production-v.p5x.telekom.net",
+      "ips": [
+        "34.36.24.120"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "GOOGL-2 | Google LLC",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "magenta.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "magenta.de",
+      "ips": [
+        "217.6.164.11"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "TOIAG-FFM-001 | DTAG-NIC",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "magenta.tv": {
+      "first_seen": "2026-08-23",
+      "hostname": "magenta.tv",
+      "ips": [
+        "80.158.66.24"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "T-SYSTEMS-DTAG-T-SYSTEMS | DTAG-NIC",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "magentacloud.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "magentacloud.de",
+      "ips": [
+        "80.158.22.59",
+        "80.158.3.186",
+        "80.158.38.16",
+        "80.158.49.140",
+        "80.158.6.204"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "T-SYSTEMS-DTAG-OTC01 | DTAG-NIC",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "magentamusik.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "magentamusik.de",
+      "ips": [
+        "80.158.66.24"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "T-SYSTEMS-DTAG-T-SYSTEMS | DTAG-NIC",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "magentatv.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "magentatv.de",
+      "ips": [
+        "80.158.66.24"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "T-SYSTEMS-DTAG-T-SYSTEMS | DTAG-NIC",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "main.sl.t-online.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "main.sl.t-online.de",
+      "ips": [],
+      "last_seen": null,
+      "resolved_asn": "",
+      "session_phase": "unknown",
+      "source": "seed-community",
+      "status": "verified"
+    },
+    "ns3.3qsdn.net": {
+      "first_seen": "2026-08-23",
+      "hostname": "ns3.3qsdn.net",
+      "ips": [
+        "91.242.173.38"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "MEDIENGMBH | CORE-BACKBONE",
+      "session_phase": "unknown",
+      "source": "seed-community",
+      "status": "verified"
+    },
+    "originalserver.prod.sngtv.t-online.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "originalserver.prod.sngtv.t-online.de",
+      "ips": [],
+      "last_seen": null,
+      "resolved_asn": "",
+      "session_phase": "unknown",
+      "source": "seed-community",
+      "status": "rejected"
+    },
+    "prod.sngtv.t-online.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "prod.sngtv.t-online.de",
+      "ips": [],
+      "last_seen": null,
+      "resolved_asn": "",
+      "session_phase": "unknown",
+      "source": "seed-community",
+      "status": "verified"
+    },
+    "prod.spacegate.telekom.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "prod.spacegate.telekom.de",
+      "ips": [
+        "3.64.89.18",
+        "63.178.98.216",
+        "63.183.251.58"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "AMAZON-FRA | A100 ROW GmbH",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "prod.streammanager.telekom-dienste.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "prod.streammanager.telekom-dienste.de",
+      "ips": [
+        "3.69.133.37",
+        "52.29.3.76"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "AMAZON-FRA | A100 ROW GmbH",
+      "session_phase": "unknown",
+      "source": "seed-community",
+      "status": "verified"
+    },
+    "sfm.t-online.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "sfm.t-online.de",
+      "ips": [],
+      "last_seen": null,
+      "resolved_asn": "",
+      "session_phase": "unknown",
+      "source": "seed-community",
+      "status": "verified"
+    },
+    "spacegate.telekom.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "spacegate.telekom.de",
+      "ips": [],
+      "last_seen": null,
+      "resolved_asn": "",
+      "session_phase": "unknown",
+      "source": "discovered",
+      "status": "verified"
+    },
+    "sso.idm.telekom.com": {
+      "first_seen": "2026-08-23",
+      "hostname": "sso.idm.telekom.com",
+      "ips": [
+        "34.36.24.120"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "GOOGL-2 | Google LLC",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "star.lam-idm.gc.telekom.net": {
+      "first_seen": "2026-08-23",
+      "hostname": "star.lam-idm.gc.telekom.net",
+      "ips": [
+        "34.36.24.120"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "GOOGL-2 | Google LLC",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "t-online.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "t-online.de",
+      "ips": [
+        "34.246.241.220",
+        "52.209.116.123",
+        "54.217.253.146"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "AMAZON-DUB | Amazon Data Services Ireland Limited",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "unverified"
+    },
+    "tags-eu.tiqcdn.com": {
+      "first_seen": "2026-08-23",
+      "hostname": "tags-eu.tiqcdn.com",
+      "ips": [
+        "104.82.111.97"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "AIBV | Akamai International, BV",
+      "session_phase": "unknown",
+      "source": "discovered",
+      "status": "verified"
+    },
+    "telekom-dienste.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "telekom-dienste.de",
+      "ips": [
+        "80.158.66.24"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "T-SYSTEMS-DTAG-T-SYSTEMS | DTAG-NIC",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "telekom.com": {
+      "first_seen": "2026-08-23",
+      "hostname": "telekom.com",
+      "ips": [
+        "18.195.53.104",
+        "3.69.239.214",
+        "3.78.119.148"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "AMAZO-ZFRA | A100 ROW GmbH",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "unverified"
+    },
+    "telekom.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "telekom.de",
+      "ips": [
+        "3.75.123.125",
+        "52.29.103.196",
+        "63.184.16.68"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "AMAZO-4 | Amazon.com, Inc.",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "unverified"
+    },
+    "tiqcdn.com": {
+      "first_seen": "2026-08-23",
+      "hostname": "tiqcdn.com",
+      "ips": [],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "unverified"
+    },
+    "tvhubs.cdn2.tv.telekom.net": {
+      "first_seen": "2026-08-23",
+      "hostname": "tvhubs.cdn2.tv.telekom.net",
+      "ips": [
+        "80.157.193.13"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "DTAG-OASIS | DTAG-NIC",
+      "session_phase": "unknown",
+      "source": "seed-cname",
+      "status": "verified"
+    },
+    "tvhubs.t-online.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "tvhubs.t-online.de",
+      "ips": [
+        "80.157.193.14"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "DTAG-OASIS | DTAG-NIC",
+      "session_phase": "unknown",
+      "source": "seed-community",
+      "status": "verified"
+    },
+    "wcps.cdn2.tv.telekom.net": {
+      "first_seen": "2026-08-23",
+      "hostname": "wcps.cdn2.tv.telekom.net",
+      "ips": [
+        "80.157.192.44"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "DTAG-OASIS | DTAG-NIC",
+      "session_phase": "unknown",
+      "source": "seed-cname",
+      "status": "verified"
+    },
+    "wcps.t-online.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "wcps.t-online.de",
+      "ips": [
+        "80.157.192.44"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "DTAG-OASIS | DTAG-NIC",
+      "session_phase": "unknown",
+      "source": "seed-community",
+      "status": "verified"
+    },
+    "web.magentatv.de": {
+      "first_seen": "2026-08-23",
+      "hostname": "web.magentatv.de",
+      "ips": [
+        "3.173.161.100",
+        "3.173.161.3",
+        "3.173.161.41",
+        "3.173.161.61"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "AT-88-Z | Amazon Technologies Inc.",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    },
+    "www.magentamusik.de.edgesuite.net": {
+      "first_seen": "2026-08-23",
+      "hostname": "www.magentamusik.de.edgesuite.net",
+      "ips": [
+        "2.16.206.16",
+        "2.16.206.8"
+      ],
+      "last_seen": "2026-08-23",
+      "resolved_asn": "AKAMAI-PA | AKAM1-RIPE-MNT",
+      "session_phase": "unknown",
+      "source": "seed-base",
+      "status": "verified"
+    }
+  },
+  "ip_netblocks": [
+    "217.6.164.0/22",
+    "80.157.192.0/22",
+    "80.158.0.0/17",
+    "80.158.0.0/20",
+    "80.158.16.0/20",
+    "80.158.32.0/19",
+    "80.158.64.0/18",
+    "91.242.173.0/24"
+  ],
+  "last_updated": "2026-08-23T12:11:05.106951+00:00",
+  "version": 1
+}
