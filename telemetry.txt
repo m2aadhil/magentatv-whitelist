@@ -1,0 +1,2 @@
+# Telemetry / analytics — intentionally kept BLOCKED (not allowlisted):
+
