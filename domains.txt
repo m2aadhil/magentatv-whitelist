@@ -15,6 +15,7 @@ ebs10.telekom.de
 entertain-tv.de
 idm.telekom.com
 ingress-group01.i22hosting.de
+internet.t-d1.de
 login-production.lam-idm.gc.telekom.net
 login.idm.telekom.com
 login.production-f6s.p5x.telekom.net
@@ -33,8 +34,12 @@ sfm.t-online.de
 spacegate.telekom.de
 sso.idm.telekom.com
 star.lam-idm.gc.telekom.net
+t-online.de
 tags-eu.tiqcdn.com
 telekom-dienste.de
+telekom.com
+telekom.de
+tiqcdn.com
 tvhubs.cdn2.tv.telekom.net
 tvhubs.t-online.de
 wcps.cdn2.tv.telekom.net
@@ -43,8 +48,3 @@ web.magentatv.de
 www.magentamusik.de.edgesuite.net
 
 # unverified (review before adding)
-internet.t-d1.de
-t-online.de
-telekom.com
-telekom.de
-tiqcdn.com

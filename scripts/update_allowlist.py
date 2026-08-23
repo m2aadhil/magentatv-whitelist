@@ -19,6 +19,7 @@ by the cron watchdog; empty/no-change runs stay quiet).
 """
 
 import json
+import ipaddress
 import os
 import re
 import socket
@@ -39,7 +40,7 @@ DO_H2 = "https://dns.google/resolve"
 # --- classification rules ----------------------------------------------------
 TELEKOM_SUFFIXES = (
     ".t-online.de", ".telekom.de", ".telekom.com", ".telekom.net",
-    ".telekom-dienste.de", ".magentatv.de", ".magenta.tv",
+    ".telekom-dienste.de", ".t-d1.de", ".magentatv.de", ".magenta.tv",
     ".magentamusik.de", ".magentacloud.de", ".magenta.de", ".tiqcdn.com",
 )
 PARTNER_SUFFIXES = (
@@ -221,16 +222,34 @@ def load_state():
     return {"version": 1, "domains": {}, "ip_netblocks": sorted(KNOWN_IP_BLOCKS)}
 
 
+def _has_suffix(domain, suffixes):
+    for s in suffixes:
+        if domain == s[1:] or domain.endswith(s):  # bare apex or subdomain
+            return True
+    return False
+
+
 def classify(domain, status, ips, cnames, org):
     if status == 3:  # NXDOMAIN
         return "rejected"
-    if domain.endswith(TELEKOM_SUFFIXES) or domain.endswith(PARTNER_SUFFIXES):
+    if _has_suffix(domain, TELEKOM_SUFFIXES) or _has_suffix(domain, PARTNER_SUFFIXES):
         return "verified"
     if ips or cnames:  # resolves
         if any(t in org.upper() for t in TELEKOM_ORG_TOKENS):
             return "verified"
         return "unverified"
     return "unverified"
+
+
+def _collapse(blocks):
+    """Drop any block that is a subnet of a larger block already kept."""
+    kept = []
+    nets = sorted((ipaddress.ip_network(b) for b in blocks if "/" in b),
+                  key=lambda n: (n.prefixlen, int(n.network_address)))
+    for n in nets:
+        if not any(n.subnet_of(k) for k in kept):
+            kept.append(n)
+    return sorted(str(k) for k in kept)
 
 
 def main():
@@ -318,7 +337,7 @@ def main():
     for ip, (name, blocks, org) in ip_orgs.items():
         if any(t in org.upper() for t in IP_ORG_TOKENS) or any(t in name.upper() for t in IP_ORG_TOKENS):
             netblocks.update(blocks)
-    netblocks = sorted(netblocks)
+    netblocks = _collapse(netblocks)
     if netblocks != state.get("ip_netblocks"):
         state["ip_netblocks"] = netblocks
         changed = True

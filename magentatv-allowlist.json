@@ -232,7 +232,7 @@
       "resolved_asn": "",
       "session_phase": "unknown",
       "source": "seed-base",
-      "status": "unverified"
+      "status": "verified"
     },
     "login-production.lam-idm.gc.telekom.net": {
       "first_seen": "2026-08-23",
@@ -404,8 +404,8 @@
       "first_seen": "2026-08-23",
       "hostname": "prod.streammanager.telekom-dienste.de",
       "ips": [
-        "3.69.133.37",
-        "52.29.3.76"
+        "18.159.80.196",
+        "3.69.107.171"
       ],
       "last_seen": "2026-08-23",
       "resolved_asn": "AMAZON-FRA | A100 ROW GmbH",
@@ -469,7 +469,7 @@
       "resolved_asn": "AMAZON-DUB | Amazon Data Services Ireland Limited",
       "session_phase": "unknown",
       "source": "seed-base",
-      "status": "unverified"
+      "status": "verified"
     },
     "tags-eu.tiqcdn.com": {
       "first_seen": "2026-08-23",
@@ -507,7 +507,7 @@
       "resolved_asn": "AMAZO-ZFRA | A100 ROW GmbH",
       "session_phase": "unknown",
       "source": "seed-base",
-      "status": "unverified"
+      "status": "verified"
     },
     "telekom.de": {
       "first_seen": "2026-08-23",
@@ -518,10 +518,10 @@
         "63.184.16.68"
       ],
       "last_seen": "2026-08-23",
-      "resolved_asn": "AMAZO-4 | Amazon.com, Inc.",
+      "resolved_asn": "AMAZON-FRA | A100 ROW GmbH",
       "session_phase": "unknown",
       "source": "seed-base",
-      "status": "unverified"
+      "status": "verified"
     },
     "tiqcdn.com": {
       "first_seen": "2026-08-23",
@@ -531,13 +531,13 @@
       "resolved_asn": "",
       "session_phase": "unknown",
       "source": "seed-base",
-      "status": "unverified"
+      "status": "verified"
     },
     "tvhubs.cdn2.tv.telekom.net": {
       "first_seen": "2026-08-23",
       "hostname": "tvhubs.cdn2.tv.telekom.net",
       "ips": [
-        "80.157.193.13"
+        "80.157.193.12"
       ],
       "last_seen": "2026-08-23",
       "resolved_asn": "DTAG-OASIS | DTAG-NIC",
@@ -549,7 +549,7 @@
       "first_seen": "2026-08-23",
       "hostname": "tvhubs.t-online.de",
       "ips": [
-        "80.157.193.14"
+        "80.157.193.16"
       ],
       "last_seen": "2026-08-23",
       "resolved_asn": "DTAG-OASIS | DTAG-NIC",
@@ -614,12 +614,8 @@
     "217.6.164.0/22",
     "80.157.192.0/22",
     "80.158.0.0/17",
-    "80.158.0.0/20",
-    "80.158.16.0/20",
-    "80.158.32.0/19",
-    "80.158.64.0/18",
     "91.242.173.0/24"
   ],
-  "last_updated": "2026-08-23T12:11:05.106951+00:00",
+  "last_updated": "2026-08-23T12:13:57.864982+00:00",
   "version": 1
 }
