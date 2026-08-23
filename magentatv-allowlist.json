@@ -1,6 +1,7 @@
 {
   "domains": {
     "a1114.dscr.akamai.net": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "a1114.dscr.akamai.net",
       "ips": [
@@ -14,6 +15,7 @@
       "status": "verified"
     },
     "accounts.login.idm.telekom.com": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "accounts.login.idm.telekom.com",
       "ips": [
@@ -26,6 +28,7 @@
       "status": "verified"
     },
     "api.eu.one.accedo.tv": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "api.eu.one.accedo.tv",
       "ips": [
@@ -48,6 +51,7 @@
       "status": "rejected"
     },
     "api.telekom.com": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "api.telekom.com",
       "ips": [
@@ -60,6 +64,7 @@
       "status": "verified"
     },
     "api.telekom.de": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "api.telekom.de",
       "ips": [
@@ -74,6 +79,7 @@
       "status": "verified"
     },
     "cdn.tv.telekom.net": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "cdn.tv.telekom.net",
       "ips": [],
@@ -84,6 +90,7 @@
       "status": "verified"
     },
     "cdn2.tv.telekom.net": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "cdn2.tv.telekom.net",
       "ips": [],
@@ -94,6 +101,7 @@
       "status": "verified"
     },
     "cloud.telekom-dienste.de": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "cloud.telekom-dienste.de",
       "ips": [
@@ -107,6 +115,7 @@
       "status": "verified"
     },
     "cloud.telekom-dienste.de.cname.i22.de": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "cloud.telekom-dienste.de.cname.i22.de",
       "ips": [
@@ -120,6 +129,7 @@
       "status": "verified"
     },
     "d1m2yu8slaezx0.cloudfront.net": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "d1m2yu8slaezx0.cloudfront.net",
       "ips": [
@@ -135,6 +145,7 @@
       "status": "verified"
     },
     "d2jma3uliasueq.cloudfront.net": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "d2jma3uliasueq.cloudfront.net",
       "ips": [
@@ -150,6 +161,7 @@
       "status": "verified"
     },
     "d31vkn4t0cmuc3.cloudfront.net": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "d31vkn4t0cmuc3.cloudfront.net",
       "ips": [
@@ -165,6 +177,7 @@
       "status": "verified"
     },
     "e1195.dscg.akamaiedge.net": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "e1195.dscg.akamaiedge.net",
       "ips": [
@@ -178,6 +191,7 @@
       "status": "verified"
     },
     "ebs10.telekom.de": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "ebs10.telekom.de",
       "ips": [
@@ -190,6 +204,7 @@
       "status": "verified"
     },
     "entertain-tv.de": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "entertain-tv.de",
       "ips": [
@@ -202,6 +217,7 @@
       "status": "verified"
     },
     "idm.telekom.com": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "idm.telekom.com",
       "ips": [],
@@ -212,6 +228,7 @@
       "status": "verified"
     },
     "ingress-group01.i22hosting.de": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "ingress-group01.i22hosting.de",
       "ips": [
@@ -225,6 +242,7 @@
       "status": "verified"
     },
     "internet.t-d1.de": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "internet.t-d1.de",
       "ips": [],
@@ -235,6 +253,7 @@
       "status": "verified"
     },
     "login-production.lam-idm.gc.telekom.net": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "login-production.lam-idm.gc.telekom.net",
       "ips": [
@@ -247,6 +266,7 @@
       "status": "verified"
     },
     "login.idm.telekom.com": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "login.idm.telekom.com",
       "ips": [],
@@ -257,6 +277,7 @@
       "status": "verified"
     },
     "login.production-f6s.p5x.telekom.net": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "login.production-f6s.p5x.telekom.net",
       "ips": [
@@ -269,6 +290,7 @@
       "status": "verified"
     },
     "login.production-v.p5x.telekom.net": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "login.production-v.p5x.telekom.net",
       "ips": [
@@ -281,6 +303,7 @@
       "status": "verified"
     },
     "magenta.de": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "magenta.de",
       "ips": [
@@ -293,6 +316,7 @@
       "status": "verified"
     },
     "magenta.tv": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "magenta.tv",
       "ips": [
@@ -305,6 +329,7 @@
       "status": "verified"
     },
     "magentacloud.de": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "magentacloud.de",
       "ips": [
@@ -321,6 +346,7 @@
       "status": "verified"
     },
     "magentamusik.de": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "magentamusik.de",
       "ips": [
@@ -333,6 +359,7 @@
       "status": "verified"
     },
     "magentatv.de": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "magentatv.de",
       "ips": [
@@ -345,6 +372,7 @@
       "status": "verified"
     },
     "main.sl.t-online.de": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "main.sl.t-online.de",
       "ips": [],
@@ -355,6 +383,7 @@
       "status": "verified"
     },
     "ns3.3qsdn.net": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "ns3.3qsdn.net",
       "ips": [
@@ -377,6 +406,7 @@
       "status": "rejected"
     },
     "prod.sngtv.t-online.de": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "prod.sngtv.t-online.de",
       "ips": [],
@@ -387,6 +417,7 @@
       "status": "verified"
     },
     "prod.spacegate.telekom.de": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "prod.spacegate.telekom.de",
       "ips": [
@@ -401,6 +432,7 @@
       "status": "verified"
     },
     "prod.streammanager.telekom-dienste.de": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "prod.streammanager.telekom-dienste.de",
       "ips": [
@@ -408,12 +440,13 @@
         "63.187.98.40"
       ],
       "last_seen": "2026-08-23",
-      "resolved_asn": "AMAZO-4 | Amazon.com, Inc.",
+      "resolved_asn": "AMAZON-FRA | A100 ROW GmbH",
       "session_phase": "unknown",
       "source": "seed-community",
       "status": "verified"
     },
     "sfm.t-online.de": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "sfm.t-online.de",
       "ips": [],
@@ -424,6 +457,7 @@
       "status": "verified"
     },
     "spacegate.telekom.de": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "spacegate.telekom.de",
       "ips": [],
@@ -434,6 +468,7 @@
       "status": "verified"
     },
     "sso.idm.telekom.com": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "sso.idm.telekom.com",
       "ips": [
@@ -446,6 +481,7 @@
       "status": "verified"
     },
     "star.lam-idm.gc.telekom.net": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "star.lam-idm.gc.telekom.net",
       "ips": [
@@ -458,6 +494,7 @@
       "status": "verified"
     },
     "t-online.de": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "t-online.de",
       "ips": [
@@ -472,6 +509,7 @@
       "status": "verified"
     },
     "tags-eu.tiqcdn.com": {
+      "blocked_locally": true,
       "first_seen": "2026-08-23",
       "hostname": "tags-eu.tiqcdn.com",
       "ips": [
@@ -484,6 +522,7 @@
       "status": "verified"
     },
     "telekom-dienste.de": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "telekom-dienste.de",
       "ips": [
@@ -496,6 +535,7 @@
       "status": "verified"
     },
     "telekom.com": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "telekom.com",
       "ips": [
@@ -504,12 +544,13 @@
         "3.78.119.148"
       ],
       "last_seen": "2026-08-23",
-      "resolved_asn": "AMAZO-ZFRA | A100 ROW GmbH",
+      "resolved_asn": "AMAZON-FRA | A100 ROW GmbH",
       "session_phase": "unknown",
       "source": "seed-base",
       "status": "verified"
     },
     "telekom.de": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "telekom.de",
       "ips": [
@@ -524,6 +565,7 @@
       "status": "verified"
     },
     "tiqcdn.com": {
+      "blocked_locally": true,
       "first_seen": "2026-08-23",
       "hostname": "tiqcdn.com",
       "ips": [],
@@ -534,10 +576,11 @@
       "status": "verified"
     },
     "tvhubs.cdn2.tv.telekom.net": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "tvhubs.cdn2.tv.telekom.net",
       "ips": [
-        "80.157.193.14"
+        "80.157.193.13"
       ],
       "last_seen": "2026-08-23",
       "resolved_asn": "DTAG-OASIS | DTAG-NIC",
@@ -546,10 +589,11 @@
       "status": "verified"
     },
     "tvhubs.t-online.de": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "tvhubs.t-online.de",
       "ips": [
-        "80.157.193.13"
+        "80.157.193.14"
       ],
       "last_seen": "2026-08-23",
       "resolved_asn": "DTAG-OASIS | DTAG-NIC",
@@ -558,6 +602,7 @@
       "status": "verified"
     },
     "wcps.cdn2.tv.telekom.net": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "wcps.cdn2.tv.telekom.net",
       "ips": [
@@ -570,6 +615,7 @@
       "status": "verified"
     },
     "wcps.t-online.de": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "wcps.t-online.de",
       "ips": [
@@ -582,6 +628,7 @@
       "status": "verified"
     },
     "web.magentatv.de": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "web.magentatv.de",
       "ips": [
@@ -597,6 +644,7 @@
       "status": "verified"
     },
     "www.magentamusik.de.edgesuite.net": {
+      "blocked_locally": false,
       "first_seen": "2026-08-23",
       "hostname": "www.magentamusik.de.edgesuite.net",
       "ips": [
@@ -616,6 +664,6 @@
     "80.158.0.0/17",
     "91.242.173.0/24"
   ],
-  "last_updated": "2026-08-23T12:15:22.623592+00:00",
+  "last_updated": "2026-08-23T12:26:45.795050+00:00",
   "version": 1
 }

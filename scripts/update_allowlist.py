@@ -258,7 +258,7 @@ def main():
     domains = state.setdefault("domains", {})
     changed = False
     report = {"new_verified": [], "new_unverified": [], "rejected": [],
-              "blocked_alerts": [], "stale": [], "errors": []}
+              "stale": [], "errors": []}
 
     # 1) ensure all seed domains exist in state
     for d, src in SEED:
@@ -319,11 +319,15 @@ def main():
         if new_status == "unverified" and old_status not in ("unverified",):
             report["new_unverified"].append(d)
 
-    # 4) blocked-alert: a verified domain currently sinkholed locally
+    # 4) record local-sinkhole status (informational only). A name sinkholed by
+    #    THIS box's resolver is NOT proof the client is broken — Magenta TV apps
+    #    commonly resolve via DoH or a separate path, so we don't alert on it.
     for d, rec in domains.items():
-        if rec["status"] == "verified" and rec.get("last_seen") == today:
-            if local_blocked(d):
-                report["blocked_alerts"].append(d)
+        if rec["status"] == "verified":
+            bl = local_blocked(d)
+            if bl != rec.get("blocked_locally"):
+                rec["blocked_locally"] = bl
+                changed = True
 
     # 5) stale flag (>90 days not seen)
     cutoff = (datetime.now(timezone.utc) - timedelta(days=90)).strftime("%Y-%m-%d")
@@ -406,7 +410,7 @@ def main():
 
     # 10) report — silent unless something changed or needs attention
     has_alert = (report["new_unverified"] or report["rejected"] or
-                 report["blocked_alerts"] or report["stale"] or report["errors"])
+                 report["stale"] or report["errors"])
     if not changed and not has_alert:
         return 0
 
@@ -425,8 +429,6 @@ def main():
         lines.append("🟡 Needs review (unverified): " + ", ".join(report["new_unverified"]))
     if report["rejected"]:
         lines.append("🚫 Rejected (NXDOMAIN): " + ", ".join(report["rejected"]))
-    if report["blocked_alerts"]:
-        lines.append("⚠️ ALERT — verified but blocked locally: " + ", ".join(report["blocked_alerts"]))
     if report["stale"]:
         lines.append("⏳ Stale (>90d unseen, review for removal): " + ", ".join(report["stale"]))
     if report["errors"]:
