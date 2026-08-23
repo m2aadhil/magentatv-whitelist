@@ -392,16 +392,24 @@ def main():
              "commit", "-m", f"chore: allowlist refresh {today}"],
             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         if r.returncode == 0:
-            subprocess.run(
+            pr = subprocess.run(
                 ["git", "-C", REPO,
                  "-c", f"credential.helper=store --file={GIT_CRED}",
                  "push", "-q", "origin", "main"],
                 stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            commit = subprocess.run(
-                ["git", "-C", REPO, "rev-parse", "--short", "HEAD"],
-                stdout=subprocess.PIPE).stdout.decode().strip()
+            if pr.returncode == 0:
+                commit = subprocess.run(
+                    ["git", "-C", REPO, "rev-parse", "--short", "HEAD"],
+                    stdout=subprocess.PIPE).stdout.decode().strip()
+            else:
+                report["errors"].append("git push failed")
 
-    # 10) report
+    # 10) report — silent unless something changed or needs attention
+    has_alert = (report["new_unverified"] or report["rejected"] or
+                 report["blocked_alerts"] or report["stale"] or report["errors"])
+    if not changed and not has_alert:
+        return 0
+
     n_verified = sum(1 for r in domains.values() if r["status"] == "verified")
     n_unver = sum(1 for r in domains.values() if r["status"] == "unverified")
     n_rej = sum(1 for r in domains.values() if r["status"] == "rejected")
