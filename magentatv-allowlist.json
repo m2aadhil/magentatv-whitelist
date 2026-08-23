@@ -195,7 +195,6 @@
       "first_seen": "2026-08-23",
       "hostname": "e1195.dscg.akamaiedge.net",
       "ips": [
-        "2.16.204.202",
         "2.16.204.208"
       ],
       "last_seen": "2026-08-23",
@@ -366,7 +365,7 @@
         "80.158.6.204"
       ],
       "last_seen": "2026-08-23",
-      "resolved_asn": "T-SYSTEMS-DTAG-OTC03 | DTAG-NIC",
+      "resolved_asn": "T-SYSTEMS-DTAG-OTC01 | DTAG-NIC",
       "session_phase": "unknown",
       "source": "seed-base",
       "status": "verified"
@@ -470,11 +469,11 @@
       "first_seen": "2026-08-23",
       "hostname": "prod.streammanager.telekom-dienste.de",
       "ips": [
-        "63.181.209.210",
-        "63.187.98.40"
+        "18.159.80.196",
+        "3.69.107.171"
       ],
       "last_seen": "2026-08-23",
-      "resolved_asn": "AMAZO-4 | Amazon.com, Inc.",
+      "resolved_asn": "AMAZON-FRA | A100 ROW GmbH",
       "session_phase": "unknown",
       "source": "seed-community",
       "status": "verified"
@@ -542,7 +541,7 @@
         "54.217.253.146"
       ],
       "last_seen": "2026-08-23",
-      "resolved_asn": "AMAZO-ZDUB3 | Amazon.com, Inc.",
+      "resolved_asn": "AMAZON-DUB | Amazon Data Services Ireland Limited",
       "session_phase": "unknown",
       "source": "seed-base",
       "status": "verified"
@@ -602,7 +601,7 @@
         "63.184.16.68"
       ],
       "last_seen": "2026-08-23",
-      "resolved_asn": "AMAZON-FRA | A100 ROW GmbH",
+      "resolved_asn": "AMAZO-4 | Amazon.com, Inc.",
       "session_phase": "unknown",
       "source": "seed-base",
       "status": "verified"
@@ -625,7 +624,7 @@
       "first_seen": "2026-08-23",
       "hostname": "tvhubs.cdn2.tv.telekom.net",
       "ips": [
-        "80.157.193.13"
+        "80.157.193.11"
       ],
       "last_seen": "2026-08-23",
       "resolved_asn": "DTAG-OASIS | DTAG-NIC",
@@ -639,7 +638,7 @@
       "first_seen": "2026-08-23",
       "hostname": "tvhubs.t-online.de",
       "ips": [
-        "80.157.193.13"
+        "80.157.193.16"
       ],
       "last_seen": "2026-08-23",
       "resolved_asn": "DTAG-OASIS | DTAG-NIC",
@@ -714,6 +713,6 @@
     "80.158.0.0/17",
     "91.242.173.0/24"
   ],
-  "last_updated": "2026-08-23T13:01:35.025396+00:00",
+  "last_updated": "2026-08-23T13:13:09.595061+00:00",
   "version": 1
 }
