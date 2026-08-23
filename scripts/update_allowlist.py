@@ -1,18 +1,22 @@
 #!/usr/bin/env python3
 """
-Magenta TV / Telekom Deutschland — allowlist maintenance.
+Generic allowlist maintenance (config-driven).
 
 Daily job: re-resolve every known domain (via public DoH, bypassing the local
 blocker), map IPs to ASN/org (RIPE/ARIN RDAP), discover new candidates
 (TLS cert SAN clustering + community scrape), classify each domain, regenerate
 the list files, and commit+push the repo if anything changed.
 
+All service-specific values (name, trusted/partner suffixes, org tokens, seed
+domains, IP blocks, scrape URLs) live in <repo>/config.json, so the same script
+powers every allowlist repo (Magenta TV, Twitch, ...).
+
 Design goals (per spec):
   * Idempotent  — no new data => zero changes, no commit.
   * Additive    — never auto-deletes rules; stale domains are only flagged.
-  * Verified    — a domain is "verified" if it is Telekom/partner-owned by
-                  suffix, or resolves into a Telekom ASN. Anything resolving
-                  to a non-Telekom ASN stays "unverified" for manual review.
+  * Verified    — a domain is "verified" if it is service/partner-owned by
+                  suffix, or resolves into a trusted ASN. Anything resolving
+                  to a non-trusted ASN stays "unverified" for manual review.
 
 Exit 0 on success. Prints a concise human report to stdout (delivered verbatim
 by the cron watchdog; empty/no-change runs stay quiet).
@@ -30,94 +34,37 @@ import urllib.request
 import urllib.parse
 from datetime import datetime, timezone, timedelta
 
-REPO = "/opt/data/repos/magentatv-whitelist"
-JSON_PATH = os.path.join(REPO, "magentatv-allowlist.json")
+REPO = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 GIT_CRED = "/opt/data/home/.git-credentials"
 
 DOH = "https://cloudflare-dns.com/dns-query"
 DO_H2 = "https://dns.google/resolve"
 
-# --- classification rules ----------------------------------------------------
-TELEKOM_SUFFIXES = (
-    ".t-online.de", ".telekom.de", ".telekom.com", ".telekom.net",
-    ".telekom-dienste.de", ".t-d1.de", ".magentatv.de", ".magenta.tv",
-    ".magentamusik.de", ".magentacloud.de", ".magenta.de", ".tiqcdn.com",
-)
-PARTNER_SUFFIXES = (
-    ".accedo.tv", ".3qsdn.net", ".edgesuite.net", ".akamai.net",
-    ".akamaiedge.net", ".cloudfront.net", ".i22hosting.de", ".i22.de",
-)
-TELEKOM_ORG_TOKENS = (
-    "DTAG", "T-SYSTEMS", "T-Online", "TOIAG", "DEUTSCHE TELEKOM", "T-MOBILE",
-)
-# IP netblocks are only emitted for these (Telekom/partner) orgs — never for
-# AWS/Akamai/CloudFront/GCP (shared, rotating). Known-good blocks seeded here.
-KNOWN_IP_BLOCKS = {
-    "80.158.0.0/17",
-    "80.157.192.0/22",
-    "217.6.164.0/22",
-    "91.242.173.0/24",
-}
-IP_ORG_TOKENS = ("DTAG", "T-SYSTEMS", "T-Online", "TOIAG", "MEDIENGMBH", "3Q")
+DOMAIN_RE = re.compile(r"[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)+\.(?:de|com|net|tv|at|io|cloud|rocks|live|gg)", re.I)
 
-# Seed domains (community + prior research). source is informational.
-SEED = [
-    # base (verified earlier via live DNS + RDAP)
-    ("magentatv.de", "seed-base"), ("magenta.tv", "seed-base"),
-    ("magentamusik.de", "seed-base"), ("magentacloud.de", "seed-base"),
-    ("magenta.de", "seed-base"), ("telekom.de", "seed-base"),
-    ("telekom.com", "seed-base"), ("telekom-dienste.de", "seed-base"),
-    ("t-online.de", "seed-base"), ("entertain-tv.de", "seed-base"),
-    ("idm.telekom.com", "seed-base"), ("login.idm.telekom.com", "seed-base"),
-    ("accounts.login.idm.telekom.com", "seed-base"),
-    ("sso.idm.telekom.com", "seed-base"),
-    ("login-production.lam-idm.gc.telekom.net", "seed-base"),
-    ("star.lam-idm.gc.telekom.net", "seed-base"),
-    ("login.production-v.p5x.telekom.net", "seed-base"),
-    ("login.production-f6s.p5x.telekom.net", "seed-base"),
-    ("api.telekom.de", "seed-base"), ("api.telekom.com", "seed-base"),
-    ("api.magentatv.de", "seed-base"), ("prod.spacegate.telekom.de", "seed-base"),
-    ("tiqcdn.com", "seed-base"), ("web.magentatv.de", "seed-base"),
-    ("internet.t-d1.de", "seed-base"), ("ebs10.telekom.de", "seed-base"),
-    ("cloud.telekom-dienste.de", "seed-base"),
-    ("ingress-group01.i22hosting.de", "seed-base"),
-    ("cloud.telekom-dienste.de.cname.i22.de", "seed-base"),
-    ("www.magentamusik.de.edgesuite.net", "seed-base"),
-    ("a1114.dscr.akamai.net", "seed-base"),
-    ("e1195.dscg.akamaiedge.net", "seed-base"),
-    ("d1m2yu8slaezx0.cloudfront.net", "seed-base"),
-    ("d31vkn4t0cmuc3.cloudfront.net", "seed-base"),
-    ("d2jma3uliasueq.cloudfront.net", "seed-base"),
-    # community seed (from network-automation prompt)
-    ("prod.sngtv.t-online.de", "seed-community"),
-    ("originalserver.prod.sngtv.t-online.de", "seed-community"),
-    ("api.eu.one.accedo.tv", "seed-community"),
-    ("wcps.t-online.de", "seed-community"),
-    ("tvhubs.t-online.de", "seed-community"),
-    ("sfm.t-online.de", "seed-community"),
-    ("main.sl.t-online.de", "seed-community"),
-    ("cdn.tv.telekom.net", "seed-community"),
-    ("prod.streammanager.telekom-dienste.de", "seed-community"),
-    ("ns3.3qsdn.net", "seed-community"),
-    # discovered via CNAME chain of the seeds above
-    ("wcps.cdn2.tv.telekom.net", "seed-cname"),
-    ("tvhubs.cdn2.tv.telekom.net", "seed-cname"),
-    ("cdn2.tv.telekom.net", "seed-cname"),
-]
 
-# Community sources to scrape for new domains (low trust -> unverified).
-SCRAPE_URLS = [
-    "https://discourse.pi-hole.net/t/magentatv-und-pi-hole/30947.json",
-    "https://discourse.pi-hole.net/t/magentacloud-klappt-nicht-mit-existenten-pi-hole-was-lauft-da-falsch/65131.json",
-]
+def load_config():
+    with open(os.path.join(REPO, "config.json")) as f:
+        return json.load(f)
 
-DOMAIN_RE = re.compile(r"[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)+\.(?:de|com|net|tv|at|io|cloud)", re.I)
+
+CFG = load_config()
+NAME = CFG["name"]
+STATE_FILE = CFG.get("state_file", "allowlist.json")
+JSON_PATH = os.path.join(REPO, STATE_FILE)
+TRUSTED_SUFFIXES = tuple(CFG.get("trusted_suffixes", []))
+PARTNER_SUFFIXES = tuple(CFG.get("partner_suffixes", []))
+TRUSTED_ORG_TOKENS = tuple(CFG.get("trusted_org_tokens", []))
+IP_ORG_TOKENS = tuple(CFG.get("ip_org_tokens", []))
+KNOWN_IP_BLOCKS = set(CFG.get("known_ip_blocks", []))
+SEED = [(d, s) for d, s in CFG.get("seed", [])]
+SCRAPE_URLS = CFG.get("scrape_urls", [])
 
 
 # --- helpers -----------------------------------------------------------------
 def http_json(url, timeout=15):
     req = urllib.request.Request(url, headers={"accept": "application/json",
-                                               "user-agent": "magentatv-allowlist/1.0"})
+                                               "user-agent": "allowlist-refresh/1.0"})
     with urllib.request.urlopen(req, timeout=timeout) as r:
         return json.load(r)
 
@@ -125,21 +72,16 @@ def http_json(url, timeout=15):
 def doh(name, rtype="A"):
     """Resolve via public DoH. Returns (status, ips, cnames)."""
     q = urllib.parse.urlencode({"name": name, "type": rtype})
-    try:
-        r = http_json(f"{DOH}?{q}", timeout=15)
-        ans = r.get("Answer") or []
-        ips = [a["data"] for a in ans if a.get("type") == 1]
-        cnames = [a["data"].rstrip(".") for a in ans if a.get("type") == 5]
-        return r.get("Status", -1), ips, cnames
-    except Exception:
+    for sv in (DOH, DO_H2):
         try:
-            r = http_json(f"{DO_H2}?{q}", timeout=15)
+            r = http_json(f"{sv}?{q}", timeout=15)
             ans = r.get("Answer") or []
             ips = [a["data"] for a in ans if a.get("type") == 1]
             cnames = [a["data"].rstrip(".") for a in ans if a.get("type") == 5]
             return r.get("Status", -1), ips, cnames
         except Exception:
-            return -1, [], []
+            continue
+    return -1, [], []
 
 
 def rdap(ip):
@@ -209,7 +151,7 @@ def scrape_candidates():
                 continue
         for m in DOMAIN_RE.findall(blob):
             d = m.lower().rstrip(".")
-            if d.endswith(TELEKOM_SUFFIXES) or d.endswith(PARTNER_SUFFIXES):
+            if d.endswith(TRUSTED_SUFFIXES) or d.endswith(PARTNER_SUFFIXES):
                 found.add(d)
     return found
 
@@ -232,10 +174,10 @@ def _has_suffix(domain, suffixes):
 def classify(domain, status, ips, cnames, org):
     if status == 3:  # NXDOMAIN
         return "rejected"
-    if _has_suffix(domain, TELEKOM_SUFFIXES) or _has_suffix(domain, PARTNER_SUFFIXES):
+    if _has_suffix(domain, TRUSTED_SUFFIXES) or _has_suffix(domain, PARTNER_SUFFIXES):
         return "verified"
     if ips or cnames:  # resolves
-        if any(t in org.upper() for t in TELEKOM_ORG_TOKENS):
+        if any(t in org.upper() for t in TRUSTED_ORG_TOKENS):
             return "verified"
         return "unverified"
     return "unverified"
@@ -272,12 +214,11 @@ def main():
 
     # 2) discover candidates from cert SAN clustering + community scrape
     new_candidates = scrape_candidates()
-    # cert SAN on verified Telekom hosts (cheap sibling discovery)
-    telekom_hosts = [d for d, v in domains.items() if d.endswith(TELEKOM_SUFFIXES)]
-    for host in telekom_hosts[:25]:  # cap to keep the run fast
+    trusted_hosts = [d for d in domains if d.endswith(TRUSTED_SUFFIXES)]
+    for host in trusted_hosts[:25]:  # cap to keep the run fast
         for san in cert_sans(host):
             san = san.lstrip("*.").lower().rstrip(".")
-            if (san.endswith(TELEKOM_SUFFIXES) or san.endswith(PARTNER_SUFFIXES)):
+            if san.endswith(TRUSTED_SUFFIXES) or san.endswith(PARTNER_SUFFIXES):
                 new_candidates.add(san)
     for c in new_candidates:
         if c not in domains:
@@ -319,9 +260,8 @@ def main():
         if new_status == "unverified" and old_status not in ("unverified",):
             report["new_unverified"].append(d)
 
-    # 4) record local-sinkhole status (informational only). A name sinkholed by
-    #    THIS box's resolver is NOT proof the client is broken — Magenta TV apps
-    #    commonly resolve via DoH or a separate path, so we don't alert on it.
+    # 4) record local-sinkhole status (informational only — a name sinkholed by
+    #    THIS box's resolver is NOT proof the client is broken).
     for d, rec in domains.items():
         if rec["status"] == "verified":
             bl = local_blocked(d)
@@ -336,7 +276,7 @@ def main():
         if rec["status"] == "verified" and ls and ls < cutoff:
             report["stale"].append(d)
 
-    # 6) rebuild IP netblocks (Telekom/partner orgs only)
+    # 6) rebuild IP netblocks (trusted orgs only)
     netblocks = set(KNOWN_IP_BLOCKS)
     for ip, (name, blocks, org) in ip_orgs.items():
         if any(t in org.upper() for t in IP_ORG_TOKENS) or any(t in name.upper() for t in IP_ORG_TOKENS):
@@ -385,9 +325,8 @@ def main():
     # 9) commit + push if changed
     commit = None
     if changed:
-        r = subprocess.run(
-            ["git", "-C", REPO, "add", "-A"],
-            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.run(["git", "-C", REPO, "add", "-A"],
+                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         r = subprocess.run(
             ["git", "-C", REPO,
              "-c", f"credential.helper=store --file={GIT_CRED}",
@@ -417,7 +356,7 @@ def main():
     n_verified = sum(1 for r in domains.values() if r["status"] == "verified")
     n_unver = sum(1 for r in domains.values() if r["status"] == "unverified")
     n_rej = sum(1 for r in domains.values() if r["status"] == "rejected")
-    lines = [f"📡 Magenta TV allowlist refresh — {today}",
+    lines = [f"📡 {NAME} allowlist refresh — {today}",
              f"Domains: {len(domains)} total · {n_verified} verified · {n_unver} unverified · {n_rej} rejected"]
     if commit:
         lines.append(f"Updated & pushed ({commit}): {n_verified} verified domains, {len(netblocks)} IP blocks")
