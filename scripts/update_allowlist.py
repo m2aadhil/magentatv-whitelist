@@ -342,15 +342,7 @@ def main():
         state["ip_netblocks"] = netblocks
         changed = True
 
-    state["last_updated"] = now = datetime.now(timezone.utc).isoformat()
-
-    # 7) write JSON
-    tmp = JSON_PATH + ".tmp"
-    with open(tmp, "w") as f:
-        json.dump(state, f, indent=2, ensure_ascii=False, sort_keys=True)
-    os.replace(tmp, JSON_PATH)
-
-    # 8) regenerate list files
+    # 7) regenerate list files
     verified = sorted(d for d, r in domains.items() if r["status"] == "verified")
     unverified = sorted(d for d, r in domains.items() if r["status"] == "unverified")
 
@@ -377,6 +369,14 @@ def main():
             with open(p, "w") as f:
                 f.write(content)
             changed = True
+
+    # 8) write JSON only on a real change (keeps tree clean / idempotent)
+    if changed:
+        state["last_updated"] = datetime.now(timezone.utc).isoformat()
+        tmp = JSON_PATH + ".tmp"
+        with open(tmp, "w") as f:
+            json.dump(state, f, indent=2, ensure_ascii=False, sort_keys=True)
+        os.replace(tmp, JSON_PATH)
 
     # 9) commit + push if changed
     commit = None
