@@ -547,7 +547,7 @@
       "status": "verified"
     },
     "tags-eu.tiqcdn.com": {
-      "blocked_locally": true,
+      "blocked_locally": false,
       "criticality": "required",
       "first_seen": "2026-08-23",
       "hostname": "tags-eu.tiqcdn.com",
@@ -607,7 +607,7 @@
       "status": "verified"
     },
     "tiqcdn.com": {
-      "blocked_locally": true,
+      "blocked_locally": false,
       "criticality": "required",
       "first_seen": "2026-08-23",
       "hostname": "tiqcdn.com",
@@ -713,6 +713,6 @@
     "80.158.0.0/17",
     "91.242.173.0/24"
   ],
-  "last_updated": "2026-08-23T13:13:09.595061+00:00",
+  "last_updated": "2026-08-25T06:00:03.126968+00:00",
   "version": 1
 }
