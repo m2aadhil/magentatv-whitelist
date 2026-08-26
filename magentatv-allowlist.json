@@ -9,7 +9,7 @@
         "2.16.206.16",
         "2.16.206.8"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "AKAMAI-PA | AKAM1-RIPE-MNT",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -23,7 +23,7 @@
       "ips": [
         "34.36.24.120"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "GOOGL-2 | Google LLC",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -37,7 +37,7 @@
       "ips": [
         "18.239.85.7"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "AMAZON-CF | Amazon.com, Inc.",
       "session_phase": "unknown",
       "source": "seed-community",
@@ -62,7 +62,7 @@
       "ips": [
         "34.54.33.7"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "GOOGL-2 | Google LLC",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -74,12 +74,12 @@
       "first_seen": "2026-08-23",
       "hostname": "api.telekom.de",
       "ips": [
-        "3.64.89.18",
-        "63.178.98.216",
+        "18.194.235.167",
+        "3.127.90.113",
         "63.183.251.58"
       ],
-      "last_seen": "2026-08-23",
-      "resolved_asn": "AMAZON-FRA | A100 ROW GmbH",
+      "last_seen": "2026-08-26",
+      "resolved_asn": "AMAZO-ZFRA | A100 ROW GmbH",
       "session_phase": "unknown",
       "source": "seed-base",
       "status": "verified"
@@ -117,7 +117,7 @@
         "185.123.90.1",
         "185.123.90.2"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "DE-I22-FRA-V4-NET02 | de-i22-1-mnt",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -132,7 +132,7 @@
         "185.123.90.1",
         "185.123.90.2"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "DE-I22-FRA-V4-NET02 | de-i22-1-mnt",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -149,7 +149,7 @@
         "3.173.161.41",
         "3.173.161.61"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "AT-88-Z | Amazon Technologies Inc.",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -161,13 +161,13 @@
       "first_seen": "2026-08-23",
       "hostname": "d2jma3uliasueq.cloudfront.net",
       "ips": [
-        "18.239.36.106",
-        "18.239.36.54",
-        "18.239.36.8",
-        "18.239.36.93"
+        "3.173.161.101",
+        "3.173.161.115",
+        "3.173.161.41",
+        "3.173.161.68"
       ],
-      "last_seen": "2026-08-23",
-      "resolved_asn": "AMAZON-CF | Amazon.com, Inc.",
+      "last_seen": "2026-08-26",
+      "resolved_asn": "AT-88-Z | Amazon Technologies Inc.",
       "session_phase": "unknown",
       "source": "seed-base",
       "status": "verified"
@@ -183,7 +183,7 @@
         "18.239.36.21",
         "18.239.36.26"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "AMAZON-CF | Amazon.com, Inc.",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -195,9 +195,10 @@
       "first_seen": "2026-08-23",
       "hostname": "e1195.dscg.akamaiedge.net",
       "ips": [
-        "2.16.204.208"
+        "2.16.204.12",
+        "2.16.204.13"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "AKAMAI-PA | AKAM1-RIPE-MNT",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -211,7 +212,7 @@
       "ips": [
         "80.158.66.173"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "T-SYSTEMS-DTAG-T-SYSTEMS | DTAG-NIC",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -225,7 +226,7 @@
       "ips": [
         "80.158.66.24"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "T-SYSTEMS-DTAG-T-SYSTEMS | DTAG-NIC",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -252,7 +253,7 @@
         "185.123.90.1",
         "185.123.90.2"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "DE-I22-FRA-V4-NET02 | de-i22-1-mnt",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -278,7 +279,7 @@
       "ips": [
         "34.36.24.120"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "GOOGL-2 | Google LLC",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -304,7 +305,7 @@
       "ips": [
         "34.36.24.120"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "GOOGL-2 | Google LLC",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -318,7 +319,7 @@
       "ips": [
         "34.36.24.120"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "GOOGL-2 | Google LLC",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -332,7 +333,7 @@
       "ips": [
         "217.6.164.11"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "TOIAG-FFM-001 | DTAG-NIC",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -346,7 +347,7 @@
       "ips": [
         "80.158.66.24"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "T-SYSTEMS-DTAG-T-SYSTEMS | DTAG-NIC",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -364,7 +365,7 @@
         "80.158.49.140",
         "80.158.6.204"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "T-SYSTEMS-DTAG-OTC01 | DTAG-NIC",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -378,7 +379,7 @@
       "ips": [
         "80.158.66.24"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "T-SYSTEMS-DTAG-T-SYSTEMS | DTAG-NIC",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -392,7 +393,7 @@
       "ips": [
         "80.158.66.24"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "T-SYSTEMS-DTAG-T-SYSTEMS | DTAG-NIC",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -418,7 +419,7 @@
       "ips": [
         "91.242.173.38"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "MEDIENGMBH | CORE-BACKBONE",
       "session_phase": "unknown",
       "source": "seed-community",
@@ -453,12 +454,12 @@
       "first_seen": "2026-08-23",
       "hostname": "prod.spacegate.telekom.de",
       "ips": [
-        "3.64.89.18",
-        "63.178.98.216",
+        "18.194.235.167",
+        "3.127.90.113",
         "63.183.251.58"
       ],
-      "last_seen": "2026-08-23",
-      "resolved_asn": "AMAZON-FRA | A100 ROW GmbH",
+      "last_seen": "2026-08-26",
+      "resolved_asn": "AMAZO-ZFRA | A100 ROW GmbH",
       "session_phase": "unknown",
       "source": "seed-base",
       "status": "verified"
@@ -469,11 +470,11 @@
       "first_seen": "2026-08-23",
       "hostname": "prod.streammanager.telekom-dienste.de",
       "ips": [
-        "18.159.80.196",
-        "3.69.107.171"
+        "18.156.151.235",
+        "63.184.197.63"
       ],
-      "last_seen": "2026-08-23",
-      "resolved_asn": "AMAZON-FRA | A100 ROW GmbH",
+      "last_seen": "2026-08-26",
+      "resolved_asn": "AMAZO-ZFRA | A100 ROW GmbH",
       "session_phase": "unknown",
       "source": "seed-community",
       "status": "verified"
@@ -510,7 +511,7 @@
       "ips": [
         "34.36.24.120"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "GOOGL-2 | Google LLC",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -524,7 +525,7 @@
       "ips": [
         "34.36.24.120"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "GOOGL-2 | Google LLC",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -540,21 +541,21 @@
         "52.209.116.123",
         "54.217.253.146"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "AMAZON-DUB | Amazon Data Services Ireland Limited",
       "session_phase": "unknown",
       "source": "seed-base",
       "status": "verified"
     },
     "tags-eu.tiqcdn.com": {
-      "blocked_locally": false,
+      "blocked_locally": true,
       "criticality": "required",
       "first_seen": "2026-08-23",
       "hostname": "tags-eu.tiqcdn.com",
       "ips": [
         "104.82.111.97"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "AIBV | Akamai International, BV",
       "session_phase": "unknown",
       "source": "discovered",
@@ -568,7 +569,7 @@
       "ips": [
         "80.158.66.24"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "T-SYSTEMS-DTAG-T-SYSTEMS | DTAG-NIC",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -584,8 +585,8 @@
         "3.69.239.214",
         "3.78.119.148"
       ],
-      "last_seen": "2026-08-23",
-      "resolved_asn": "AMAZON-FRA | A100 ROW GmbH",
+      "last_seen": "2026-08-26",
+      "resolved_asn": "AMAZO-ZFRA | A100 ROW GmbH",
       "session_phase": "unknown",
       "source": "seed-base",
       "status": "verified"
@@ -600,19 +601,19 @@
         "52.29.103.196",
         "63.184.16.68"
       ],
-      "last_seen": "2026-08-23",
-      "resolved_asn": "AMAZO-4 | Amazon.com, Inc.",
+      "last_seen": "2026-08-26",
+      "resolved_asn": "AMAZON-FRA | A100 ROW GmbH",
       "session_phase": "unknown",
       "source": "seed-base",
       "status": "verified"
     },
     "tiqcdn.com": {
-      "blocked_locally": false,
+      "blocked_locally": true,
       "criticality": "required",
       "first_seen": "2026-08-23",
       "hostname": "tiqcdn.com",
       "ips": [],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -624,9 +625,9 @@
       "first_seen": "2026-08-23",
       "hostname": "tvhubs.cdn2.tv.telekom.net",
       "ips": [
-        "80.157.193.11"
+        "80.157.193.16"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "DTAG-OASIS | DTAG-NIC",
       "session_phase": "unknown",
       "source": "seed-cname",
@@ -638,9 +639,9 @@
       "first_seen": "2026-08-23",
       "hostname": "tvhubs.t-online.de",
       "ips": [
-        "80.157.193.16"
+        "80.157.193.11"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "DTAG-OASIS | DTAG-NIC",
       "session_phase": "unknown",
       "source": "seed-community",
@@ -654,7 +655,7 @@
       "ips": [
         "80.157.192.44"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "DTAG-OASIS | DTAG-NIC",
       "session_phase": "unknown",
       "source": "seed-cname",
@@ -668,7 +669,7 @@
       "ips": [
         "80.157.192.44"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "DTAG-OASIS | DTAG-NIC",
       "session_phase": "unknown",
       "source": "seed-community",
@@ -685,7 +686,7 @@
         "3.173.161.41",
         "3.173.161.61"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "AT-88-Z | Amazon Technologies Inc.",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -700,7 +701,7 @@
         "2.16.206.16",
         "2.16.206.8"
       ],
-      "last_seen": "2026-08-23",
+      "last_seen": "2026-08-26",
       "resolved_asn": "AKAMAI-PA | AKAM1-RIPE-MNT",
       "session_phase": "unknown",
       "source": "seed-base",
@@ -713,6 +714,6 @@
     "80.158.0.0/17",
     "91.242.173.0/24"
   ],
-  "last_updated": "2026-08-25T06:00:03.126968+00:00",
+  "last_updated": "2026-08-26T06:00:50.865927+00:00",
   "version": 1
 }
